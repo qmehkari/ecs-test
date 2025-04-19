@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World with Time</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <div id="time"></div>
+
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            const currentTime = new Date().toLocaleTimeString();
+            timeElement.textContent = `Current time: ${currentTime}`;
+        }
+
+        // Update time immediately and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
