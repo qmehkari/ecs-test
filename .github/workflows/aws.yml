@@ -9,7 +9,7 @@ env:
     AWS_ECR_REPOSITORY: ecs-test
     AWS_ECS_SERVICE: ecs-test
     AWS_ECS_CLUSTER: ecs-test
-    AWS_ECS_TASK_DEFINITION: ./.github/workflows/task-definition.json
+    AWS_ECS_TASK_DEFINITION: .github/workflows/task-definition.json
     AWS_ECS_CONTAINER_NAME: ecs-test
     AWS_ROLE_TO_ASSUME: arn:aws:iam::771392415588:role/qmehkari-github-role
 
