@@ -11,6 +11,8 @@ env:
     AWS_ECS_CLUSTER: ecs-test
     AWS_ECS_TASK_DEFINITION: .github/workflows/task-definition.json
     AWS_ECS_CONTAINER_NAME: ecs-test
+    AWS_ROLE_TO_ASSUME: arn:aws:iam::771392415588:role/qmehkari-github-role
+
 permissions:
     id-token: write
     contents: read
@@ -28,9 +30,9 @@ jobs:
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v1
               with:                    
-                    aws-region: ${{ env.AWS_REGION }}
-                    role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-                    role-session-name: GitHubActions
+                role-to-assume: ${{ env.AWS_ROLE_TO_ASSUME }}
+                aws-region: ${{ env.AWS_REGION }}
+                role-session-name: GitHubActions
             
             - name: Log in to Amazon ECR
               id: login-ecr
