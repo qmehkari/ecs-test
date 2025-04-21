@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>Hello World!</h1>
+    <h2 id="location"></h2>
     <div id="time"></div>
 
     <script>
@@ -15,8 +16,15 @@
             timeElement.textContent = `Current time: ${currentTime}`;
         }
 
+        function getLocation(){
+            console.log("Location: " + location.hostname);
+            // Display the location in the HTML
+            // This will show the hostname of the current page
+            document.getElementById('location').innerHTML = "Location: " + location.hostname
+        }
         // Update time immediately and then every second
         updateTime();
+        getLocation();
 
         setInterval(updateTime, 1000);
     </script>
