@@ -17,10 +17,14 @@
         }
 
         function getLocation(){
-            console.log("Location: " + location.hostname);
-            // Display the location in the HTML
-            // This will show the hostname of the current page
-            document.getElementById('location').innerHTML = "Location: " + location.hostname
+            fetch('https://api.ipify.org?format=json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('location').innerHTML = data.ip;
+            })
+            .catch(err => {
+                console.error('Error fetching IP:', err);
+            });
         }
         // Update time immediately and then every second
         updateTime();
